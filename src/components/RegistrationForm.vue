@@ -1,28 +1,30 @@
 <template>
-  <form>
-    <FormWrapper>
-      <div>
-        <CustomInput v-model="name" name="name" label="Имя"></CustomInput>
-        <CustomInput v-model="login" name="login" label="Логин"></CustomInput>
-        <CustomInput
-          v-model="email"
-          name="email"
-          label="Электронная почта"
-          type="email"
-        ></CustomInput>
-        <CustomInput
-          v-model="password"
-          name="password"
-          label="Пароль"
-          type="password"
-        ></CustomInput>
-      </div>
-      <RouterLink to="/auth" class="link">Уже есть аккаунт?</RouterLink>
-      <div>
-        <CustomButton @click="handleRegister">Зарегестрироваться</CustomButton>
-      </div>
-    </FormWrapper>
-  </form>
+  <ContainerWrapper>
+    <form>
+      <FormWrapper>
+        <div>
+          <CustomInput v-model="name" name="name" label="Имя"></CustomInput>
+          <CustomInput v-model="login" name="login" label="Логин"></CustomInput>
+          <CustomInput
+            v-model="email"
+            name="email"
+            label="Электронная почта"
+            type="email"
+          ></CustomInput>
+          <CustomInput
+            v-model="password"
+            name="password"
+            label="Пароль"
+            type="password"
+          ></CustomInput>
+        </div>
+        <RouterLink to="/auth" class="link">Уже есть аккаунт?</RouterLink>
+        <div>
+          <CustomButton @click="handleRegister">Зарегестрироваться</CustomButton>
+        </div>
+      </FormWrapper>
+    </form>
+  </ContainerWrapper>
 </template>
 
 <script setup>
@@ -31,6 +33,7 @@ import CustomInput from './CustomInput.vue'
 import CustomButton from './CustomButton.vue'
 import { ref } from 'vue'
 import { useUsersStore } from '@/stores/users'
+import ContainerWrapper from './ContainerWrapper.vue'
 
 const name = ref('')
 const login = ref('')
