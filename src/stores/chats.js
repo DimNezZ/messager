@@ -5,34 +5,52 @@ export const useChatsStore = defineStore('chats', {
   state: () => ({
     chatList: [],
     nextId: 1,
+    activeChatId: null,
   }),
+
+  getters: {
+    activeChat: (state) => state.chatList.find((c) => c.id === state.activeChatId),
+  },
 
   actions: {
     createChat() {
       const currentUserStore = useCurrentUserStore()
-      const authorName = currentUserStore.user?.name
+      const login = currentUserStore.user?.login
 
       const newChat = {
         id: this.nextId++,
-        author: authorName,
-        members: [authorName],
+        author: login,
+        members: [login],
       }
 
       this.chatList.push(newChat)
     },
-    joinChat(chatId, userName) {
+    setActiveChat(chatId) {
+      this.activeChatId = chatId
+    },
+    dropChat(chatId) {
+      this.chatList = this.chatList.filter((c) => c.id !== chatId)
+    },
+
+    joinChat(chatId, userLogin) {
       const chat = this.chatList.find((c) => c.id === chatId)
-      if (chat && !chat.members.includes(userName)) {
-        chat.members.push(userName)
+      if (chat && !chat.members.includes(userLogin)) {
+        chat.members.push(userLogin)
+      }
+    },
+    leaveChat(chatId, userName) {
+      const chat = this.chatList.find((c) => c.id === chatId)
+      if (chat) {
+        chat.members = chat.members.filter((m) => m !== userName)
       }
     },
     getMyChats() {
       const currentUser = useCurrentUserStore()
-      return this.chatList.filter((c) => c.author === currentUser.user?.name)
+      return this.chatList.filter((c) => c.author === currentUser.user?.login)
     },
     getOtherChats() {
       const currentUser = useCurrentUserStore()
-      return this.chatList.filter((c) => c.author !== currentUser.user?.name)
+      return this.chatList.filter((c) => c.author !== currentUser.user?.login)
     },
   },
 

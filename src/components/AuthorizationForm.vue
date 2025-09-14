@@ -50,5 +50,3 @@ const handleLogin = () => {
 }
 console.log(usersStore)
 </script>
-
-<style scoped></style>

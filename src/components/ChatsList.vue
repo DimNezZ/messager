@@ -10,8 +10,8 @@
 
 <script setup>
 import { computed } from 'vue'
-import ChatBar from './ChatBar.vue'
 import { useChatsStore } from '@/stores/chats'
+import ChatBar from './ChatBar.vue'
 
 const chatsStore = useChatsStore()
 
@@ -41,23 +41,32 @@ const props = defineProps({
   justify-content: center;
   gap: 10px;
 }
+
 .title {
   text-align: center;
   font-size: 18px;
   font-weight: 700;
 }
+
 .chats {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-height: 200px;
+  max-height: 300px;
   padding: 10px 20px;
   border: 3px solid var(--main-color);
   border-radius: 10px;
   overflow-y: scroll;
   transition: 0.3s;
 }
+
 .chats:hover {
   border-color: var(--second-color);
+}
+
+.empty {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
 }
 </style>

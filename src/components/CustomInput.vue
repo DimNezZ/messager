@@ -50,17 +50,20 @@ defineEmits(['update:modelValue'])
   flex-direction: column;
   gap: 2px;
 }
+
 .label {
   font-size: 18px;
   font-weight: 700;
   color: var(--main-color);
 }
+
 .input {
   padding: 3px 5px;
   border-radius: 5px;
   border: 2px solid var(--main-color);
   font-size: 14px;
 }
+
 .input:focus {
   outline: none;
   border-color: var(--second-color);

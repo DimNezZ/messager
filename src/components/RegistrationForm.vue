@@ -52,7 +52,6 @@ const handleRegister = () => {
       email: email.value,
       password: password.value,
     })
-    // register({ name: name.value, login: login.value, email: email.value, password: password.value })
     success.value = true
   } catch (err) {
     error.value = err.message
@@ -60,5 +59,3 @@ const handleRegister = () => {
   }
 }
 </script>
-
-<style scoped></style>

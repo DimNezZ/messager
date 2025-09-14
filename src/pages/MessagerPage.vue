@@ -1,9 +1,16 @@
 <template>
-  <div class="column">
-    <ChatsArea></ChatsArea>
-    <div>
+  <div class="layout">
+    <div class="sidebar">
+      <ChatsArea />
+    </div>
+
+    <div class="main">
       <div>Пользователь под именем {{ currentUser.user?.name }}</div>
       <CustomButton @click="currentUser.logout">Выход</CustomButton>
+    </div>
+
+    <div class="sidebar">
+      <UserArea />
     </div>
   </div>
 </template>
@@ -11,13 +18,35 @@
 <script setup>
 import ChatsArea from '@/components/ChatsArea.vue'
 import CustomButton from '@/components/CustomButton.vue'
+import UserArea from '@/components/UserArea.vue'
 import { useCurrentUserStore } from '@/stores/user'
 
 const currentUser = useCurrentUserStore()
 </script>
 
 <style scoped>
-.column {
+.layout {
+  display: grid;
+  grid-template-columns: 450px 1fr 450px; /* три колонки: левая 450px, центр адаптивный, правая 450px */
+  height: 100vh;
+  width: 100%;
+}
+
+.sidebar {
+  padding: 20px;
   display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #f8f8f8;
+}
+
+.main {
+  padding: 20px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-right: 2px solid #ddd;
+  border-left: 2px solid #ddd;
 }
 </style>

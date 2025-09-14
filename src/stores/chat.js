@@ -5,7 +5,7 @@ export const useChatStore = defineStore('chat', {
   state: () => ({
     id: null,
     author: null,
-    membets: [],
+    members: [],
   }),
   actions: {
     addMember(userName) {

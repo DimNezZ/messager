@@ -26,10 +26,12 @@ defineProps({
   font-weight: 700;
   color: var(--main-color);
 }
-.button:hover{
+
+.button:hover {
   background-color: var(--main-color);
-    color: #fff;
+  color: #fff;
 }
+
 .button:active {
   border-color: var(--second-color);
   background-color: var(--second-color);

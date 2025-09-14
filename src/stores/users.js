@@ -20,6 +20,12 @@ export const useUsersStore = defineStore('users', {
       }
       return user
     },
+    findUserByLogin(login) {
+      return this.userList.find((u) => u.login === login)
+    },
+    getUsersByLogin(logins) {
+      return logins.map((login) => this.findUserByLogin(login)).filter((user) => user)
+    },
   },
   persist: true,
 })

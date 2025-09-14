@@ -12,24 +12,25 @@
 import ChatsList from '@/components/ChatsList.vue'
 import { useChatsStore } from '@/stores/chats'
 import CustomButton from './CustomButton.vue'
+import { useCurrentUserStore } from '@/stores/user'
 
 const chatsStore = useChatsStore()
+const currentUser = useCurrentUserStore()
 
 function createChat() {
-  chatsStore.createChat()
+  chatsStore.createChat(currentUser.user?.name)
 }
 </script>
 
 <style scoped>
 .area_wrapper {
-  height: 100vh;
-  width: 400px;
-  padding: 30px 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: start;
   align-items: center;
+  gap: 60px;
 }
+
 .my_chats {
   width: 100%;
   display: flex;
