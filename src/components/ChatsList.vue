@@ -54,7 +54,7 @@ const props = defineProps({
   gap: 20px;
   max-height: 300px;
   padding: 10px 20px;
-  border: 3px solid var(--main-color);
+  border: var(--medium-border);
   border-radius: 10px;
   overflow-y: scroll;
   transition: 0.3s;

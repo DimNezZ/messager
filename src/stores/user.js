@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { useChatsStore } from './chats'
 
 export const useCurrentUserStore = defineStore('currentUser', {
   state: () => {
@@ -13,6 +14,9 @@ export const useCurrentUserStore = defineStore('currentUser', {
       this.isAuthenticated = true
     },
     logout() {
+      const chatsStore = useChatsStore()
+      chatsStore.clearActiveChat()
+
       this.user = null
       this.isAuthenticated = false
       this.redirectPath = null

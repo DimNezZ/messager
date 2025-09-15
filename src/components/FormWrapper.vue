@@ -12,7 +12,7 @@
   gap: 20px;
   padding: 20px;
   width: 600px;
-  border-radius: 10px;
-  border: 3px solid var(--main-color);
+  border-radius: var(--border-radius-m);
+  border: var(--medium-border);
 }
 </style>

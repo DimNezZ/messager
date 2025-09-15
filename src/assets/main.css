@@ -16,12 +16,12 @@ a:hover {
 
 ::-webkit-scrollbar-track {
   background: #c0c0c0;
-  border-radius: 5px;
+  border-radius: var(--border-radius-s);
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--main-color);
-  border-radius: 5px;
+  border-radius: var(--border-radius-s);
 }
 
 ::-webkit-scrollbar-thumb:hover {

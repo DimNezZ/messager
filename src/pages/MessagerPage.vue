@@ -6,7 +6,7 @@
 
     <div class="main">
       <div>Пользователь под именем {{ currentUser.user?.name }}</div>
-      <CustomButton @click="currentUser.logout">Выход</CustomButton>
+      <MessengerArea></MessengerArea>
     </div>
 
     <div class="sidebar">
@@ -17,7 +17,7 @@
 
 <script setup>
 import ChatsArea from '@/components/ChatsArea.vue'
-import CustomButton from '@/components/CustomButton.vue'
+import MessengerArea from '@/components/MessengerArea.vue'
 import UserArea from '@/components/UserArea.vue'
 import { useCurrentUserStore } from '@/stores/user'
 
@@ -27,7 +27,7 @@ const currentUser = useCurrentUserStore()
 <style scoped>
 .layout {
   display: grid;
-  grid-template-columns: 450px 1fr 450px; /* три колонки: левая 450px, центр адаптивный, правая 450px */
+  grid-template-columns: 450px 1fr 450px;
   height: 100vh;
   width: 100%;
 }

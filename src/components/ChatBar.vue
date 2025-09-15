@@ -59,7 +59,7 @@ function setActive() {
   align-items: center;
   gap: 20px;
   padding: 5px 10px;
-  border-radius: 10px;
+  border-radius: var(--border-radius-m);
   background-color: rgba(0, 0, 0, 0.1);
 }
 

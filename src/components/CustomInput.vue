@@ -59,8 +59,8 @@ defineEmits(['update:modelValue'])
 
 .input {
   padding: 3px 5px;
-  border-radius: 5px;
-  border: 2px solid var(--main-color);
+  border-radius: var(--border-radius-s);
+  border: var(--small-border);
   font-size: 14px;
 }
 

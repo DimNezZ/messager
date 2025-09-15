@@ -1,6 +1,6 @@
 <template>
   <ContainerWrapper>
-    <form>
+    <form name="reg_form">
       <FormWrapper>
         <div>
           <CustomInput v-model="name" name="name" label="Имя"></CustomInput>
@@ -23,6 +23,10 @@
           <CustomButton @click="handleRegister">Зарегестрироваться</CustomButton>
         </div>
       </FormWrapper>
+      <div class="test">
+        <div v-if="success" class="success notification">Вы зарегистрировались</div>
+        <div v-if="error" class="error notification">{{ error }}</div>
+      </div>
     </form>
   </ContainerWrapper>
 </template>
@@ -43,8 +47,16 @@ const error = ref('')
 const success = ref(false)
 const userStore = useUsersStore()
 
+const resetForm = () => {
+  name.value = ''
+  login.value = ''
+  email.value = ''
+  password.value = ''
+}
+
 const handleRegister = () => {
   success.value = false
+  error.value = ''
   try {
     userStore.registerUser({
       name: name.value,
@@ -53,9 +65,25 @@ const handleRegister = () => {
       password: password.value,
     })
     success.value = true
+    resetForm()
   } catch (err) {
     error.value = err.message
     console.log(error.value)
   }
 }
 </script>
+
+<style scoped>
+.notification {
+  margin-top: 10px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.success {
+  color: #02b914;
+}
+.error {
+  color: #ec1010;
+}
+</style>

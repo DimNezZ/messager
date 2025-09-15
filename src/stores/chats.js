@@ -44,6 +44,17 @@ export const useChatsStore = defineStore('chats', {
         chat.members = chat.members.filter((m) => m !== userName)
       }
     },
+    kickMember(chatId, userLogin) {
+      const currentUserStore = useCurrentUserStore()
+      const currentLogin = currentUserStore.user?.login
+      const chat = this.chatList.find((c) => c.id === chatId)
+      if (chat && chat.author === currentLogin && chat.author !== userLogin) {
+        chat.members = chat.members.filter((m) => m !== userLogin)
+      }
+    },
+    clearActiveChat() {
+      this.activeChatId = null
+    },
     getMyChats() {
       const currentUser = useCurrentUserStore()
       return this.chatList.filter((c) => c.author === currentUser.user?.login)
