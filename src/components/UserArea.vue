@@ -4,8 +4,9 @@
       <div class="title">
         Участники канала пользователя {{ activeChat.author }} ({{ membersUsers.length }})
       </div>
+      <CustomInput v-model="searchQuery" label="Поиск участников" placeholder="Имя участника" ></CustomInput>
       <div class="users">
-        <UserCard v-for="user in membersUsers" :key="user.login" :user="user"></UserCard>
+        <UserCard v-for="user in filteredMembers" :key="user.login" :user="user"></UserCard>
       </div>
     </div>
     <div v-else class="emtpy">Выберите чат для отображени участников</div>
@@ -18,14 +19,16 @@
 <script setup>
 import { useUsersStore } from '@/stores/users'
 import { useChatsStore } from '@/stores/chats'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useCurrentUserStore } from '@/stores/user'
 import UserCard from './UserCard.vue'
 import CustomButton from './CustomButton.vue'
+import CustomInput from './CustomInput.vue'
 
 const chatsStore = useChatsStore()
 const usersStore = useUsersStore()
 const currentUser = useCurrentUserStore()
+const searchQuery = ref("")
 
 const activeChat = computed(() => chatsStore.activeChat)
 const membersUsers = computed(() => {
@@ -34,6 +37,10 @@ const membersUsers = computed(() => {
   } else {
     return []
   }
+})
+
+const filteredMembers = computed(() => {
+  return membersUsers.value.filter((user)=> user.name.toLowerCase().includes(searchQuery.value.toLowerCase()))
 })
 </script>
 
