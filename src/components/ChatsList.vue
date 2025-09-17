@@ -1,5 +1,5 @@
 <template>
-  <div class="list_wrapper">
+  <div class="chat_list_wrapper">
     <div class="title">{{ title }}</div>
     <div v-if="chatList.length" class="chats">
       <ChatBar v-for="chat in chatList" :key="chat.id" :chat="chat"></ChatBar>
@@ -34,7 +34,7 @@ const props = defineProps({
 </script>
 
 <style scoped>
-.list_wrapper {
+.chat_list_wrapper {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -56,17 +56,11 @@ const props = defineProps({
   padding: 10px 20px;
   border: var(--medium-border);
   border-radius: 10px;
-  overflow-y: scroll;
+  overflow-y: auto;
   transition: 0.3s;
 }
 
 .chats:hover {
   border-color: var(--second-color);
-}
-
-.empty {
-  font-size: 18px;
-  font-weight: 700;
-  text-align: center;
 }
 </style>

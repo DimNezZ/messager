@@ -9,6 +9,12 @@ a:hover {
   color: var(--second-color);
 }
 
+.empty {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
 ::-webkit-scrollbar {
   width: 12px;
   height: 12px;

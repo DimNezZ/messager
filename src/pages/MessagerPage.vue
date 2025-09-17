@@ -5,7 +5,6 @@
     </div>
 
     <div class="main">
-      <div>Пользователь под именем {{ currentUser.user?.name }}</div>
       <MessengerArea></MessengerArea>
     </div>
 
@@ -19,9 +18,6 @@
 import ChatsArea from '@/components/ChatsArea.vue'
 import MessengerArea from '@/components/MessengerArea.vue'
 import UserArea from '@/components/UserArea.vue'
-import { useCurrentUserStore } from '@/stores/user'
-
-const currentUser = useCurrentUserStore()
 </script>
 
 <style scoped>
@@ -45,8 +41,9 @@ const currentUser = useCurrentUserStore()
   background: #fff;
   display: flex;
   flex-direction: column;
-  gap: 20px;
   border-right: 2px solid #ddd;
   border-left: 2px solid #ddd;
+  flex: 1;
+  min-height: 0;
 }
 </style>

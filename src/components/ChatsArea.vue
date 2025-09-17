@@ -1,5 +1,9 @@
 <template>
   <div class="area_wrapper">
+    <div class="current_user">
+      <div class="current_user_text">Пользователь под именем</div>
+      <div class="current_user_name">{{ currentUser.user?.name }}</div>
+    </div>
     <div class="my_chats">
       <CustomButton @click="createChat">Создать чат</CustomButton>
       <ChatsList title="Мои чаты" type="mine"></ChatsList>
@@ -28,7 +32,7 @@ function createChat() {
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  gap: 60px;
+  gap: 50px;
 }
 
 .my_chats {
@@ -37,5 +41,16 @@ function createChat() {
   flex-direction: column;
   align-items: center;
   gap: 30px;
+}
+
+.current_user {
+  display: flex;
+  gap: 10px;
+  font-size: 18px;
+}
+
+.current_user_name {
+  color: var(--main-color);
+  font-weight: 700;
 }
 </style>

@@ -4,12 +4,16 @@
       <div class="title">
         Участники канала пользователя {{ activeChat.author }} ({{ membersUsers.length }})
       </div>
-      <CustomInput v-model="searchQuery" label="Поиск участников" placeholder="Имя участника" ></CustomInput>
+      <CustomInput
+        v-model="searchQuery"
+        label="Поиск участников"
+        placeholder="Имя участника"
+      ></CustomInput>
       <div class="users">
         <UserCard v-for="user in filteredMembers" :key="user.login" :user="user"></UserCard>
       </div>
     </div>
-    <div v-else class="emtpy">Выберите чат для отображени участников</div>
+    <div v-else class="empty">Выберите чат для отображени участников</div>
     <div class="logout">
       <CustomButton @click="currentUser.logout">Выход</CustomButton>
     </div>
@@ -28,7 +32,7 @@ import CustomInput from './CustomInput.vue'
 const chatsStore = useChatsStore()
 const usersStore = useUsersStore()
 const currentUser = useCurrentUserStore()
-const searchQuery = ref("")
+const searchQuery = ref('')
 
 const activeChat = computed(() => chatsStore.activeChat)
 const membersUsers = computed(() => {
@@ -40,7 +44,9 @@ const membersUsers = computed(() => {
 })
 
 const filteredMembers = computed(() => {
-  return membersUsers.value.filter((user)=> user.name.toLowerCase().includes(searchQuery.value.toLowerCase()))
+  return membersUsers.value.filter((user) =>
+    user.name.toLowerCase().includes(searchQuery.value.toLowerCase()),
+  )
 })
 </script>
 
@@ -55,7 +61,7 @@ const filteredMembers = computed(() => {
 .user_wrapper {
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 50px;
 }
 .title {
   font-size: 18px;
@@ -66,11 +72,6 @@ const filteredMembers = computed(() => {
   flex-wrap: wrap;
   justify-content: center;
   gap: 25px;
-}
-.emtpy {
-  font-size: 18px;
-  font-weight: 700;
-  text-align: center;
 }
 .logout {
   align-items: end;
