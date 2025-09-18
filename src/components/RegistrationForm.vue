@@ -87,3 +87,8 @@ const handleRegister = () => {
   color: #ec1010;
 }
 </style>
+<!-- A registration form containing data entry components, each of which has its own data.
+When clicked, the button component registers, calls a method, and checks the user storage.
+If registration is successful, it clears the form.
+There is a link to go to the authorization form.
+Supporting components in the form of a container and form shell are also used. -->

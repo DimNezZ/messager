@@ -47,3 +47,4 @@ import UserArea from '@/components/UserArea.vue'
   min-height: 0;
 }
 </style>
+<!-- Page containing the ChatsArea, MessengerArea, and UserArea components divided into three columns. -->

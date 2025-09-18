@@ -69,3 +69,5 @@ defineEmits(['update:modelValue'])
   border-color: var(--second-color);
 }
 </style>
+
+<!-- Input field component. Displays label and placeholder properties as needed. Also has the ability to add events.      -->

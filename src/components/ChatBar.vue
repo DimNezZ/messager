@@ -71,3 +71,4 @@ function setActive() {
   font-size: 16px;
 }
 </style>
+<!-- This component is used to display a chat with a single tab that shows buttons with various functions: join, leave, delete -->

@@ -77,3 +77,5 @@ const firstLetter = computed(() => props.user.login[0]?.toUpperCase())
   right: -2px;
 }
 </style>
+<!-- Component for rendering a specific user's card
+ with a button for the chat creator with the option to exclude -->

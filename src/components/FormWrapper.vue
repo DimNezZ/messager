@@ -16,3 +16,4 @@
   border: var(--medium-border);
 }
 </style>
+<!-- Wrapper for forms, used for authorization and registration forms       -->

@@ -55,3 +55,4 @@ defineProps({
   font-size: 15px;
 }
 </style>
+<!-- Button component with the ability to configure the required functionality -->

@@ -48,5 +48,9 @@ const handleLogin = () => {
     console.log(error.value)
   }
 }
-console.log(usersStore)
 </script>
+<!--  An authorization form containing data entry components, each of which has its own data associated with it.
+The login function is associated with the button component;
+if the data is correct, the user will be redirected to another page.
+There is a link to go to the registration form.
+Supporting components in the form of a container and form shell are also used.-->

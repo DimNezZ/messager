@@ -37,3 +37,4 @@ const messages = computed(() => {
   padding: 20px 10px;
 }
 </style>
+<!-- Component for wrapping all messages from the selected chat. Renders instances of the MessageBar component -->

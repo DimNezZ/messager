@@ -77,3 +77,7 @@ const filteredMembers = computed(() => {
   align-items: end;
 }
 </style>
+<!-- Component for displaying a column with chat users.
+It is possible to search for users.
+It shows the current chat, the number of users in it, and renders UserCard components.
+It also has a button for logging out of the system. -->

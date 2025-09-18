@@ -54,3 +54,5 @@ const isMine = currentUser.user?.login === props.message?.author
   word-break: break-word;
 }
 </style>
+<!-- Component of a message instance containing the message text and its sender.
+ It looks different for your own messages and messages from others. -->

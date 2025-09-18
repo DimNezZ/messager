@@ -12,3 +12,4 @@
   align-items: center;
 }
 </style>
+<!-- Supporting component for centering content -->

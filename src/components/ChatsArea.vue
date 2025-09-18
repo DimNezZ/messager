@@ -54,3 +54,7 @@ function createChat() {
   font-weight: 700;
 }
 </style>
+<!-- Сomponent for rendering a column with chat-related functionality.
+  The button component is used to create a new instance of the ChatBar component.
+  These, in turn, are located in the ChatList wrapper component.
+  Your own chats and other people's chats are separated into different ChatLists. -->

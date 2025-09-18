@@ -64,3 +64,6 @@ const props = defineProps({
   border-color: var(--second-color);
 }
 </style>
+
+<!-- Component for storing instances of the ChatBar component.
+ If there are no chats, it notifies the user; if there are many chats, a scroll bar appears. -->

@@ -43,3 +43,6 @@ function send() {
   min-height: 0;
 }
 </style>
+<!-- Component for interacting with messages.
+ Contains an input field component and buttons for sending content to MessageList,
+ which stores MessageBar instances responsible for a single message. If no chat is selected, it notifies the user. -->
